@@ -30,13 +30,33 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. Explain how to build stateful class components.
 
+  Stateful class components extend from React.Component. They use a constructor to build out components and update state. State is set using this.setState and then update with desired results. Correct states are then passed around as needed to various components. Make sure to use this.state to link to the state.
+
 2. Describe the different phases of the component lifecycle.
 
+    Phases are:
+    1. Mounting - This is the first time a new component mounts
+    2. Updating - This is what happens as that component updates ( new props, state changes, forceUpdate - should rarely/ever use!)
+    3. Unmounting - This is right before a new component is goign to mount, must unmount the current one.
+    
 3. Demonstrate an understanding of class component lifecycle methods.
+
+  The lifecycle of components allows logic to automatically hook into certain aspects of the life cycle. They can take advantage of these phases to run some functionality. The methods themselves:
+    1. ComponentDidMount - Can use something like an axios request when a component mounts so that it can be filled in with axios results
+    2. componentDidUpdate - this occurs multiple times as new updates mount. This can occur A LOT and can cause infiniite loops. (This is when updates trigger functions that trigger updates)
+    3. ComponentWillUnmount - As the name suggests, this could be when a user clicks a different portion of the website leading to a new component. The original component must first unmount. 
 
 4. Define stateful logic.
 
+  Logic that keeps state. State is almost like the status of something. As the user interfaces with website, changes in state will occur depending on the logic in place.
+
 5. Describe how to test a React component with React Testing Library.
+
+  Must have a file ending in tests.js. React will look through this file. Import testing library. Then write out your tests in orderly fashion:
+    1. Must name your test
+    2. Must render your components
+    3. Must make queries 
+    4. Must make assertions - what you expect to happen with the results from the queries.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
