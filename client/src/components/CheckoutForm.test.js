@@ -17,12 +17,12 @@ test("form shows success message on submit with form details", () => {
     // render the component
     render (<CheckoutForm />);
     // Fill out the form
-    const firstName = screen.getAllByLabelText(/first name:/i)
-    const lastName = screen.getAllByLabelText(/last name:/i)
-    const address = screen.getAllByLabelText(/address:/i)
-    const city= screen.getAllByLabelText(/city:/i)
-    const state = screen.getAllByLabelText(/state:/i)
-    const zipCode = screen.getAllByLabelText(/zip:/i)
+    const firstName = screen.getByLabelText(/first name:/i)
+    const lastName = screen.getByLabelText(/last name:/i)
+    const address = screen.getByLabelText(/address:/i)
+    const city= screen.getByLabelText(/city:/i)
+    const state = screen.getByLabelText(/state:/i)
+    const zipCode = screen.getByLabelText(/zip:/i)
 
     fireEvent.change(firstName, {target: {value: 'Kyle'}})
     fireEvent.change(lastName, {target: {value: 'Kyle'}})
